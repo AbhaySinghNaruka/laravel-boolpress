@@ -1,14 +1,15 @@
 <template>
     <div>
         <NavBar />
-        <h1>Io vengo da App</h1>
         <main>
-            <router-view></router-view>
+            <div class="container">
+                <router-view></router-view>
+            </div>
         </main>
         <FooterComponent />
 
 
-            <h1>Frontoffice in Vue</h1>
+            <!-- <h1>Frontoffice in Vue</h1>
 
             <div class="row g-3">
                 <div v-for="post in arrPosts" :key="post.id" class="col-sm-6 col-md-4">
@@ -22,10 +23,10 @@
                     </div>
                 </div>
 
-            <!-- navbar -->
-            <!-- main -->
-            <!-- footer -->
-        </div>
+             navbar
+            main
+             footer
+        </div> -->
     </div>
 </template>
 
@@ -39,15 +40,6 @@ export default {
     NavBar,
     FooterComponent,
   },
-    data() {
-        return {
-            arrPosts : [],
-        };
-    },
-    created() {
-        axios.get('/api/posts')
-        .then(response => this.arrPosts = response.data.results)
-    }
 }
 </script>
 
