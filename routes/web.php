@@ -15,9 +15,9 @@ use Illuminate\Database\Schema\PostgresBuilder;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('guest.home');
-})->name('home');
+})->name('home'); */
 
 Auth::routes();
 
@@ -34,3 +34,9 @@ Route::middleware('auth')
         Route::get('/categories/slug', 'CategoryController@slug')->name('slug');
         Route::resource('tags', 'TagController');
     });
+
+Route::get('/categories/{category}', 'CategoryController@slug')->name('categories.slug');
+
+Route::get('{any?}', function () {
+    return view('guest.home');
+})->where("any", ".*")->name('guest.home');
