@@ -1,11 +1,15 @@
 <template>
     <div>
+        <NavBar />
+        <h1>Io vengo da App</h1>
+        <main>
+            <router-view></router-view>
+        </main>
+        <FooterComponent />
 
-        <div class="container">
+
             <h1>Frontoffice in Vue</h1>
-            <!-- <ol>
-            <li v-for="post in arrPosts" :key="post.id">{{ post.title }}</li>
-            </ol> -->
+
             <div class="row g-3">
                 <div v-for="post in arrPosts" :key="post.id" class="col-sm-6 col-md-4">
                     <div class="card h-100">
@@ -17,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
             <!-- navbar -->
             <!-- main -->
             <!-- footer -->
@@ -26,8 +30,15 @@
 </template>
 
 <script>
+import NavBar from './components/NavBar';
+import FooterComponent from './components/FooterComponent';
+
 export default {
     name: 'App',
+    components: {
+    NavBar,
+    FooterComponent,
+  },
     data() {
         return {
             arrPosts : [],

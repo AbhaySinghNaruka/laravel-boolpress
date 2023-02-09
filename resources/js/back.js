@@ -1,4 +1,4 @@
-require('./bootstrap');
+require('./common');
 
 const inputTitle = document.querySelector('[data-sluger=title]');
 const inputSlug = document.querySelector('[data-sluger=slug]');
